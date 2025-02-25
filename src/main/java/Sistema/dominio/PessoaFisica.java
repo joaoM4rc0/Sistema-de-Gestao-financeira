@@ -7,12 +7,18 @@ public class PessoaFisica extends Pessoa {
     private double salario;
     private double saldoBanco;
     private double gastos;
-    private double despesas;
     private double receitas;
     public PessoaFisica(String name, int idade, String dataDeNascimento, String cpf) {
         super(name, idade, dataDeNascimento, cpf);
     }
-
+    public void adicionaReceitas(double valor) {
+        double receitas = PessoaFisicaService.adicionaReceita(valor);
+        this.receitas = receitas;
+    }
+    public void saldoDoBanco() {
+        double saldoCalculado = PessoaFisicaService.calculaSaldoDaConta();
+        this.saldoBanco = saldoCalculado;
+    }
     public void adiconaSalario(double salario) {
         this.salario = PessoaFisicaService.adicionaSalario(salario);
     }
@@ -53,11 +59,4 @@ public class PessoaFisica extends Pessoa {
         this.receitas = receitas;
     }
 
-    public double getDespesas() {
-        return despesas;
-    }
-
-    public void setDespesas(double despesas) {
-        this.despesas = despesas;
-    }
 }
