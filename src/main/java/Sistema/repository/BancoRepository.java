@@ -19,10 +19,10 @@ public class BancoRepository {
         }
     }
     private static PreparedStatement insertCliente(Connection conn, String name, String cpf) throws SQLException {
-        String sql = "INSERT INTO `devdojo_maratona`.`producer` (`name`, `cpf`, `saldo`) VALUES(?, ?, ?);";
+        String sql = "INSERT INTO `Banco_do_serasa`.`Cliente` (`name`, `cpf`, `saldo`) VALUES(?, ?, ?);";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, String.format("%%%s%%", name));
-        ps.setString(2, String.format("%%%s%%", cpf));
+        ps.setString(1, name);
+        ps.setString(2, cpf);
         ps.setInt(3, 0);
         return ps;
     }
