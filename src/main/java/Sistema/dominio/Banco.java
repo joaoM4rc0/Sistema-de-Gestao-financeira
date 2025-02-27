@@ -9,10 +9,6 @@ public class Banco {
     private double saldo;
     private double receita;
     private double gastos;
-    public void cadastraCliente(String name, String cpf) {
 
-    }
-    public void adicionaSaldo(double valor) {
 
-    }
 }
