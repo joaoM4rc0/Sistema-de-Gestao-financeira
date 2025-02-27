@@ -1,0 +1,20 @@
+services:
+  db:
+    image: mysql:9.1.0
+    container_name: mysql_banco
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Banco_do_serasa
+    volumes:
+      - dados_financeiros:/var/lib/mysql
+      - /usr/share/zoneinfo:/usr/share/zoneinfo:ro
+    ports:
+      - "3309:3306"  # Corrected port mapping
+    networks:
+      - banco_default
+
+volumes:
+  dados_financeiros:
+
+networks:
+  banco_default:
