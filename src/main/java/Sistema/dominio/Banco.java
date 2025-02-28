@@ -1,14 +1,17 @@
 package Sistema.dominio;
 
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Banco {
-    private PessoaFisica clientes;
+    private List<Integer> idCliente = new ArrayList<>();
     private double saldo;
     private double receita;
     private double gastos;
-
-
+    public void adicionaIdDosClientes(Integer id) {
+        idCliente.add(id);
+    }
+    public List<Integer> retornaClientes() {
+        System.out.println(idCliente.get(1));
+        return new ArrayList<>(idCliente);
+    }
 }

@@ -8,6 +8,7 @@ public class PessoaFisica extends Pessoa {
     private double saldoBanco;
     private double gastos;
     private double receitas;
+    private int id;
     public PessoaFisica(String name, int idade, String dataDeNascimento, String cpf) {
         super(name, idade, dataDeNascimento, cpf);
     }
@@ -59,4 +60,11 @@ public class PessoaFisica extends Pessoa {
         this.receitas = receitas;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

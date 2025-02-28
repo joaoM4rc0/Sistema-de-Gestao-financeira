@@ -1,7 +1,11 @@
 package Sistema.service;
 
+import Sistema.dominio.Banco;
+import Sistema.dominio.ClienteCadastrado;
 import Sistema.repository.BancoRepository;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class BancoService {
@@ -19,5 +23,12 @@ public class BancoService {
         System.out.println("digite o id que vc quer adicionar esse valor");
         int id = SCANNER.nextInt();
         BancoRepository.updateSaldo(valor, id);
+    }
+    public static void findById(){
+        System.out.println("digite o id que vc quer encontrar");
+        int id = SCANNER.nextInt();
+        Optional<ClienteCadastrado> cliente = BancoRepository.findById(id);
+        Banco banco = new Banco();
+
     }
 }
