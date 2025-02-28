@@ -18,6 +18,8 @@ import java.util.Optional;
 @Log4j2
 public class BancoRepository {
     public static void InsertCliente(String name, String cpf) {
+        // esse metodo vai inserir ao banco de dados um cliente, com seu nome e o seu cpf
+        // dps irei fazer a verificação do cpf
         try(Connection conn = ConnectionFactory.connectionFactory();
             PreparedStatement ps = insertCliente(conn, name, cpf)) {
             ps.execute();
@@ -67,6 +69,9 @@ public class BancoRepository {
 
     private static PreparedStatement insertCliente(Connection conn, String name, String cpf) throws SQLException {
         String sql = "INSERT INTO `Banco_do_serasa`.`Cliente` (`name`, `cpf`, `saldo`) VALUES(?, ?, ?);";
+        // eu tenho que adicionar um valor no saldo para o banco de daods
+        // mas eu deixei ele como '0' ou seja sem saldo
+        // porque eu fiz um metodo update para valor
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, name);
         ps.setString(2, cpf);
