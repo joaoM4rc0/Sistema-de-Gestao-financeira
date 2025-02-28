@@ -11,8 +11,9 @@ import java.util.Scanner;
 public class BancoService {
     private static final Scanner SCANNER = new Scanner(System.in);
     public static void insertCliente() {
-        System.out.println("digite o nome e em seguida o seu cpf");
+        System.out.println("digite o seu nome");
         String name = SCANNER.nextLine();
+        System.out.println("digite seu cpf");
         String cpf = SCANNER.nextLine();
         BancoRepository.InsertCliente(name, cpf);
     }
