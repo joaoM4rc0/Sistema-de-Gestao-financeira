@@ -25,11 +25,17 @@ public class BancoService {
         int id = SCANNER.nextInt();
         BancoRepository.updateSaldo(valor, id);
     }
+    public static void DeleteClientePutId() {
+        System.out.println("o id inserido irá excluir o cliente com esse id");
+        int id = SCANNER.nextInt();
+        if (id <= 0) throw new IllegalArgumentException("id nao pode ser menor ou igual a zero");
+        BancoRepository.DeleteClientePutId(id);
+    }
     public static void findById(){
         System.out.println("digite o id que vc quer encontrar");
         int id = SCANNER.nextInt();
         Optional<ClienteCadastrado> cliente = BancoRepository.findById(id);
-        Banco banco = new Banco();
+        cliente.stream().forEach(System.out::println);
 
     }
 }
